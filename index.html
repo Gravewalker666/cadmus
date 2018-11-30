@@ -2,93 +2,215 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sample page</title>
+    <title>Checkout Form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assests/css/bootstrap.min.css">
+
 </head>
-<body>
-<br>
-
+<body style="background-color: whitesmoke;">
 <div class="container">
+    <img class="d-block mx-auto" src="thumb.jpg" alt="" width="90" height="90">
+    <h2 class="text-center">Checkout Form</h2>
+    <p class="lead">Below is an example form built entirely with Bootstrap's form controls. Each required form group has
+        a validation state that can be triggered by attempting to submit the form without completing it.</p>
+
     <div class="row">
-        <div class="col-md-7">
-            <img class="img-fluid float-left" src="../ddd/123456.jpg">
+        <div class="col-md-4 order-md-2 mb-4">
+            <h4 class="d-flex justify-content-between mb-3">
+                <span class="text-muted">Your cart</span>
+                <span class="badge badge-secondary badge-pill">3</span>
+            </h4>
+            <ul class="list-group mb-3">
+                <li class="list-group-item d-flex justify-content-between">
+                    <div>
+                        <h6 class="mb-0">Product name</h6>
+                        <small class="text-muted">Brief description</small>
+                    </div>
+                    <span class="text-muted">$12</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                    <div>
+                        <h6 class="mb-0">Second product</h6>
+                        <small class="text-muted">Brief description</small>
+                    </div>
+                    <span class="text-muted">$8</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                    <div>
+                        <h6 class="mb-0">Third item</h6>
+                        <small class="text-muted">Brief description</small>
+                    </div>
+                    <span class="text-muted">$5</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between bg-light">
+                    <div class="text-success">
+                        <h6 class="mb-0">Promo code</h6>
+                        <small>EXAMPLECODE</small>
+                    </div>
+                    <span class="text-success">-$5</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>Total (USD)</span>
+                    <strong>$20</strong>
+                </li>
+            </ul>
+
+            <form class="p-2">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Promo code">
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-secondary">Redeem</button>
+                    </div>
+                </div>
+            </form>
         </div>
+        <div class="col-md-8 order-md-1">
+            <h4 class="mb-3">Billing address</h4>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="firstName">First name</label>
+                    <input type="text" required class="form-control" id="firstName" placeholder="">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="lastName">Last name</label>
+                    <input type="text" required class="form-control" id="lastName" placeholder="">
+                </div>
+            </div>
 
-        <div class="col-md-4">
-            <h1>Creative Clouds</h1>
-            <p style="font-family:'calibri';">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui
-                deserunt mollit anim id est laborum</p>
-            <button class="btn btn-primary">Get Started</button>
+            <div class="mb-3">
+                <label for="username">Username</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">@</span>
+                    </div>
+                    <input type="text" required class="form-control" id="username" placeholder="Username">
+                </div>
+            </div>
 
+            <div class="mb-3">
+                <label for="email">Email <span class="text-muted">(Optional)</span></label>
+                <input type="email" class="form-control" id="email" placeholder="you@example.com">
+            </div>
+
+            <div class="mb-3">
+                <label for="address">Address</label>
+                <input type="text" required class="form-control" id="address" placeholder="1234 Main St">
+            </div>
+
+            <div class="mb-3">
+                <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
+                <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+            </div>
+
+            <div class="row">
+                <div class="col-md-5 mb-3">
+                    <label for="country">Country</label>
+                    <select class="custom-select d-block w-100" id="country" required>
+                        <option value="">Choose</option>
+                        <option>United States</option>
+                        <option>United Kingdom</option>
+                        <option>Australia</option>
+                        <option>China</option>
+                        <option>Japan</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Please select a valid country.
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="state">State</label>
+                    <select required class="custom-select d-block w-100" id="state">
+                        <option value="">Choose</option>
+                        <option>California</option>
+                        <option>New york</option>
+                        <option>Star city</option>
+                        <option>Central city</option>
+                        <option>Gotham</option>
+                    </select>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="zip">Zip Code</label>
+                    <input required type="text" class="form-control" id="zip" placeholder="">
+                </div>
+            </div>
+            <hr class="mb-4">
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="same-address">
+                <label class="custom-control-label" for="same-address">Shipping address is the same as my billing
+                    address</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="save-info">
+                <label class="custom-control-label" for="save-info">Save this information for next time</label>
+            </div>
+            <hr class="mb-4">
+
+            <h4 class="mb-3">Payment</h4>
+
+            <div class="d-block mb-3">
+                <div class="custom-control custom-radio">
+                    <input id="credit" checked required name="paymentMethod" type="radio" class="custom-control-input">
+                    <label class="custom-control-label" for="credit">Credit card</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input id="debit" required name="paymentMethod" type="radio" class="custom-control-input">
+                    <label class="custom-control-label" for="debit">Debit card</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input id="paypal" required name="paymentMethod" type="radio" class="custom-control-input">
+                    <label class="custom-control-label" for="paypal">Paypal</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="creditName">Name on card</label>
+                    <input type="text" required class="form-control" id="creditName" placeholder="" x>
+                    <small class="text-muted">Full name as displayed on card</small>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="creditNumber">Credit card number</label>
+                    <input type="text" required class="form-control" id="creditNumber" placeholder="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 mb-3">
+                    <label for="creditExpire">Expiration</label>
+                    <input type="text" required class="form-control" id="creditExpire" placeholder="">
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="creditccv">CVV</label>
+                    <input type="text" required class="form-control" id="creditccv" placeholder="">
+                </div>
+            </div>
+            <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+            </form>
         </div>
-
     </div>
-    <br>
-    <div class="row">
-        <div class="col-md-4">
-            <h3 style="font-family:'sans-serif'; ">HTML</h3>
-            <p style="font-family:'sans-serif';font-size: small">Lorem ipsum dolor sit amet, consectetur adipiscing
-                elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui
-                deserunt mollit anim id est laborum</p>
-            <p id="p1" style="font-family:'sans-serif';font-size: small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui
-                deserunt mollit anim id est laborum</p>
-            <button class="btn btn-default" onclick="toggleP()">More info</button>
-        </div>
-
-        <div class="col-md-4">
-            <h3 style="font-family:'sans-serif';">CSS</h3>
-            <p style="font-family:'sans-serif';font-size: small">Lorem ipsum dolor sit amet, consectetur adipiscing
-                elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui
-                deserunt mollit anim id est laborum</p>
-            <button class="btn btn-default">More info</button>
-        </div>
-
-        <div class="col-md-4">
-            <h3 style="font-family:'sans-serif';">Bootstrap</h3>
-            <p style="font-family:'sans-serif';font-size: small">Lorem ipsum dolor sit amet, consectetur adipiscing
-                elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui
-                deserunt mollit anim id est laborum</p>
-            <button class="btn btn-default">More info</button>
-        </div>
-
-        <div class="col-md-12 text-left">
-            <hr>
-            <small class="block">
-                Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-                All rights reserved
-            </small>
-            <hr>
-        </div>
 
 
-    </div>
+    <footer class="my-5 text-muted text-center text-small p-5">
+        <p class="mb-0">&copy; 2017-2018 Creative Clouds</p>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="#">Privacy</a></li>
+            <li class="list-inline-item"><a href="#">Terms</a></li>
+            <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+    </footer>
+
+
 </div>
-
-
 </body>
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<!-- Popper JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-<script>
-    $('#p1').hide();
+<script src="assests/js/bootstrap.min.js"></script>
 
-    function toggleP() {
-        $('#p1').toggle(1000);
-    }
-</script>
+
+<script src="assests/js/popper.min.js"></script>
+
+
+<script src="assests/js/jquery.min.js"></script>
+
 
 </html>
